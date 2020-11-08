@@ -3,6 +3,8 @@
 
 /*Represents a timer to be used in main*/
 
+#include <stddef.h>
+
 //starts timer
 void Timer_start(int time);
 

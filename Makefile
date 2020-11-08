@@ -22,13 +22,16 @@ GTKLIB=`pkg-config --cflags --libs gtk+-3.0`
 LD=gcc
 LDFLAGS=$(PTHREAD) $(GTKLIB) -export-dynamic
 
-OBJS=    main.o
+OBJS=    main.o timer.o
 
 all: $(OBJS)
 	$(LD) -o $(TARGET) $(OBJS) $(LDFLAGS)
 
 main.o: src/main.c
 	$(CC) -c $(CCFLAGS) src/main.c $(GTKLIB) -o main.o
+
+timer.o: src/Timer/timer.c src/Timer/timer.h
+	$(CC) -c $(CCFLAGS) src/Timer/timer.c $(GTKLIB) -o timer.o
 
 clean:
 	rm -f *.o $(TARGET)

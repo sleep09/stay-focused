@@ -5,6 +5,8 @@
 #include <stdbool.h>
 #include <gtk/gtk.h>
 
+#include "Timer/timer.h"
+
 static GtkEntry* entry;
 static GtkLabel* timer;
 static GtkButton* stats;
