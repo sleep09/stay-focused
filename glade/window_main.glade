@@ -141,6 +141,7 @@
                 <property name="margin_left">10</property>
                 <property name="margin_right">10</property>
                 <property name="margin_bottom">10</property>
+                <signal name="clicked" handler="open_stats" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
