@@ -4,6 +4,8 @@
 #include <string.h>
 #include <stdbool.h>
 #include <gtk/gtk.h>
+#include <time.h>
+#include "Timer/timer.h"
 
 static GtkEntry* entry;
 static GtkLabel* timer;
@@ -35,6 +37,15 @@ int main(int argc, char *argv[])
     gtk_widget_show(window);                
     gtk_main();
 
+    clock_t start_t;
+    char* display;
+    start_t=clock();
+    display=Timer_get(atoi(time), start_t);
+
+    while(atoi(time)*60!=start_t){
+        gtk_label_set_text(GTK_LABEL(timer),display);
+    }
+
     return 0;
 }
 
@@ -54,10 +65,11 @@ bool is_valid_input(const char* input){
 	return true;
 }
 
-void on_enter_pushed(){
+char* on_enter_pushed(){
 	const char* time = gtk_entry_get_text(entry);
 	if(is_valid_input(time)){
 		gtk_label_set_text(timer, time);
+        return time;
 	}else{
 		gtk_label_set_text(timer, "Sorry that input isn't valid.");
 	}
