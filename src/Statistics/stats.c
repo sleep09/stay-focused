@@ -1,6 +1,6 @@
 #include "stats.h"
 
-static long total_minutes = 0;;
+static long total_minutes = 0;
 static long number_of_sessions = 0;
 static long most_recent = 0;
 
