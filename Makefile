@@ -1,7 +1,7 @@
 #Makefile code from https://prognotes.net/2015/07/gtk-3-glade-c-programming-template/
 
 # change application name here (executable output name)
-TARGET=StayFocuedU
+TARGET=StayFocusedU
 
 # compiler
 CC=gcc

@@ -14,9 +14,6 @@ void Timer_start(int time);
 //gets time left for timer
 int Timer_get();
 
-//pauses timer if not paused, unpauses timer if paused.
-void Timer_flip_pause();
-
 //making sure time is over
 bool Timer_isOver(); 
 

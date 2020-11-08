@@ -12,7 +12,6 @@
 static GtkEntry* entry;
 static GtkLabel* timer;
 static GtkButton* stats;
-static GtkButton* pauser;
 
 int main(int argc, char *argv[])
 {
@@ -31,7 +30,6 @@ int main(int argc, char *argv[])
     entry = GTK_ENTRY(gtk_builder_get_object(builder, "entry"));
     timer = GTK_LABEL(gtk_builder_get_object(builder, "timer"));
     stats = GTK_BUTTON(gtk_builder_get_object(builder, "stats"));
-    pauser = GTK_BUTTON(gtk_builder_get_object(builder, "pause"));
 
 
     g_object_unref(builder);
@@ -72,16 +70,13 @@ static gboolean count_timer(void* args){
 void on_enter_pushed(){
 	const char* time = gtk_entry_get_text(entry);
 	if(is_valid_input(time)){
+        Stats_add_new_session_length_in_minutes(atoi(time));
         Timer_start(atoi(time));
         //g_timeout_add (1000 /* milliseconds */, on_timeout, label);
         g_timeout_add (1000 /* milliseconds */, count_timer, timer);
 	}else{
 		gtk_label_set_text(timer, "Sorry that input isn't valid.");
 	}
-}
-
-void pause_clicked(){
-	return;
 }
 
 void open_stats(){
