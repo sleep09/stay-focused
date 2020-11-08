@@ -1,6 +1,6 @@
 # stay-focused
 
-By Justin Choi(sleep09), and Evan Coulter(Evan-Coulter)
+By Justin Choi(sleep09), and Evan Coulter(Evan-Coulter)(CourseTest)
 
 This is a simple productivity desktop app for linux users to track their study time with a timer and simple statistics.
 
